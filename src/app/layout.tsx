@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import ErrorBoundary from "@/components/ErrorBoundary";
 
 const nunito = Nunito({
@@ -36,6 +37,7 @@ export default function RootLayout({
     <html lang="nl">
       <body className={`${nunito.variable} antialiased`}>
         <ErrorBoundary>{children}</ErrorBoundary>
+        <Analytics />
       </body>
     </html>
   );
